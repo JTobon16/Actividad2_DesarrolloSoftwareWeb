@@ -1,10 +1,122 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
 
-</body>
+<!-- Cabecera -->
+<th:block th:insert="~{layouts/header}"></th:block>
+
+<!-- Menu -->
+<th:block th:insert="~{layouts/menu}"></th:block>
+
+<main class="container">
+    <div class="page-header">
+        <h1>Editar Entrada de Cine</h1>
+        <a th:href="@{/entradas-cine}" class="btn btn-secondary">Volver</a>
+    </div>
+
+    <form th:action="@{/entradas-cine/{id}/edit(id=${entrada.id})}"
+          th:object="${entrada}" method="post" class="form">
+
+        <div class="form-group">
+            <label for="pelicula">Pelicula</label>
+            <input type="text" id="pelicula" th:field="*{pelicula}"
+                   class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="valor">Valor</label>
+            <input type="number" id="valor" th:field="*{valor}"
+                   class="form-control" step="0.01" required>
+        </div>
+
+        <div class="form-group">
+            <label for="fechaCompra">Fecha de Compra</label>
+            <input type="date" id="fechaCompra" th:field="*{fechaCompra}"
+                   class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="fechaEntrada">Fecha de Entrada</label>
+            <input type="date" id="fechaEntrada" th:field="*{fechaEntrada}"
+                   class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="horaInicio">Hora de Inicio</label>
+            <input type="time" id="horaInicio" th:field="*{horaInicio}"
+                   class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="horaFin">Hora de Fin</label>
+            <input type="time" id="horaFin" th:field="*{horaFin}"
+                   class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="puesto">Puesto</label>
+            <input type="text" id="puesto" th:field="*{puesto}"
+                   class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="sala">Sala</label>
+            <input type="text" id="sala" th:field="*{sala}"
+                   class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="genero">Genero</label>
+            <select id="genero" th:field="*{genero}" class="form-control" required>
+                <option value="ACCION">Accion</option>
+                <option value="COMEDIA">Comedia</option>
+                <option value="DRAMA">Drama</option>
+                <option value="TERROR">Terror</option>
+                <option value="CIENCIA_FICCION">Ciencia Ficcion</option>
+                <option value="ANIMACION">Animacion</option>
+                <option value="ROMANCE">Romance</option>
+                <option value="DOCUMENTAL">Documental</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="cine">Cine</label>
+            <input type="text" id="cine" th:field="*{cine}"
+                   class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="pais">Pais</label>
+            <input type="text" id="pais" th:field="*{pais}"
+                   class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="departamento">Departamento</label>
+            <input type="text" id="departamento" th:field="*{departamento}"
+                   class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="ciudad">Ciudad</label>
+            <input type="text" id="ciudad" th:field="*{ciudad}"
+                   class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="centroComercial">Centro Comercial</label>
+            <input type="text" id="centroComercial" th:field="*{centroComercial}"
+                   class="form-control" required>
+        </div>
+
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Actualizar</button>
+            <a th:href="@{/entradas-cine}" class="btn btn-secondary">Cancelar</a>
+        </div>
+
+    </form>
+</main>
+
+<!-- Pie de pagina -->
+<th:block th:insert="~{layouts/footer}"></th:block>
+
 </html>

@@ -1,10 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
 <body>
-$END$
+
+<nav class="navbar">
+    <div class="navbar-brand">
+        <!-- Logo o nombre de la app -->
+        <a th:href="@{/}">CineApp</a>
+    </div>
+    <ul class="navbar-menu">
+        <!-- Enlace a lista de usuarios -->
+        <li><a th:href="@{/users}">Usuarios</a></li>
+        <!-- Enlace a lista de entradas -->
+        <li><a th:href="@{/entradas-cine}">Entradas de Cine</a></li>
+    </ul>
+</nav>
+
 </body>
 </html>

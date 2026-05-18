@@ -1,10 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
 
-</body>
+<!-- Cabecera -->
+<th:block th:insert="~{layouts/header}"></th:block>
+
+<!-- Menu -->
+<th:block th:insert="~{layouts/menu}"></th:block>
+
+<main class="container">
+    <div class="page-header">
+        <h1>Detalle de Usuario</h1>
+        <a th:href="@{/users}" class="btn btn-secondary">Volver</a>
+    </div>
+
+    <div class="detail-card">
+
+        <div class="detail-row">
+            <span class="detail-label">Nombre</span>
+            <!-- th:text muestra el valor del campo -->
+            <span class="detail-value" th:text="${user.name}"></span>
+        </div>
+
+        <div class="detail-row">
+            <span class="detail-label">Email</span>
+            <span class="detail-value" th:text="${user.email}"></span>
+        </div>
+
+        <div class="detail-row">
+            <span class="detail-label">Rol</span>
+            <span class="detail-value" th:text="${user.role}"></span>
+        </div>
+
+        <div class="detail-row">
+            <span class="detail-label">Estado</span>
+            <span class="detail-value" th:text="${user.status}"></span>
+        </div>
+
+        <div class="detail-row">
+            <span class="detail-label">Creado</span>
+            <span class="detail-value" th:text="${user.createdAt}"></span>
+        </div>
+
+        <div class="detail-row">
+            <span class="detail-label">Actualizado</span>
+            <span class="detail-value" th:text="${user.updatedAt}"></span>
+        </div>
+
+        <div class="form-actions">
+            <!-- Boton editar -->
+            <a th:href="@{/users/{id}/edit(id=${user.id})}" class="btn btn-warning">Editar</a>
+            <!-- Formulario eliminar -->
+            <form th:action="@{/users/{id}/delete(id=${user.id})}" method="post">
+                <button type="submit" class="btn btn-danger"
+                        onclick="return confirm('¿Estás seguro de eliminar este usuario?')">
+                    Eliminar
+                </button>
+            </form>
+        </div>
+
+    </div>
+</main>
+
+<!-- Pie de pagina -->
+<th:block th:insert="~{layouts/footer}"></th:block>
+
 </html>

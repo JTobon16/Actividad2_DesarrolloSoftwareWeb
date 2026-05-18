@@ -1,10 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
 
-</body>
+<!-- Cabecera -->
+<th:block th:insert="~{layouts/header}"></th:block>
+
+<!-- Menu -->
+<th:block th:insert="~{layouts/menu}"></th:block>
+
+<main class="container">
+    <div class="page-header">
+        <h1>Editar Usuario</h1>
+        <a th:href="@{/users}" class="btn btn-secondary">Volver</a>
+    </div>
+
+    <!-- th:action construye la URL dinamicamente con el ID -->
+    <form th:action="@{/users/{id}/edit(id=${user.id})}" th:object="${user}"
+          method="post" class="form">
+
+        <div class="form-group">
+            <label for="name">Nombre</label>
+            <input type="text" id="name" th:field="*{name}"
+                   class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" th:field="*{email}"
+                   class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Contraseña</label>
+            <input type="password" id="password" th:field="*{password}"
+                   class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label for="role">Rol</label>
+            <select id="role" th:field="*{role}" class="form-control" required>
+                <option value="ADMIN">Administrador</option>
+                <option value="USER">Usuario</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="status">Estado</label>
+            <select id="status" th:field="*{status}" class="form-control" required>
+                <option value="ACTIVE">Activo</option>
+                <option value="INACTIVE">Inactivo</option>
+            </select>
+        </div>
+
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Actualizar</button>
+            <a th:href="@{/users}" class="btn btn-secondary">Cancelar</a>
+        </div>
+
+    </form>
+</main>
+
+<!-- Pie de pagina -->
+<th:block th:insert="~{layouts/footer}"></th:block>
+
 </html>

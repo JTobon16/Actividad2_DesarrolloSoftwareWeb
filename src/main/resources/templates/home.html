@@ -1,10 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineApp</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
 </head>
 <body>
+
+<nav class="navbar">
+    <div class="navbar-brand">
+        <a th:href="@{/}">CineApp</a>
+    </div>
+    <ul class="navbar-menu">
+        <li><a th:href="@{/users}">Usuarios</a></li>
+        <li><a th:href="@{/entradas-cine}">Entradas de Cine</a></li>
+    </ul>
+</nav>
+
+<main class="container">
+    <div class="page-header">
+        <h1>Bienvenido a CineApp</h1>
+    </div>
+
+    <div class="home-cards">
+        <div class="card">
+            <h2>Usuarios</h2>
+            <p>Gestiona los usuarios del sistema</p>
+            <a th:href="@{/users}" class="btn btn-primary">Ver Usuarios</a>
+        </div>
+        <div class="card">
+            <h2>Entradas de Cine</h2>
+            <p>Gestiona las entradas de cine</p>
+            <a th:href="@{/entradas-cine}" class="btn btn-primary">Ver Entradas</a>
+        </div>
+    </div>
+</main>
+
+<footer class="footer">
+    <p>&copy; 2025 - Universidad de Cartagena - Desarrollo Software Web</p>
+</footer>
+
+<script th:src="@{/js/main.js}"></script>
 
 </body>
 </html>

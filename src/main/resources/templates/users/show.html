@@ -1,11 +1,22 @@
 <!DOCTYPE html>
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle Usuario - CineApp</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
 
-<!-- Cabecera -->
-<th:block th:insert="~{layouts/header}"></th:block>
-
-<!-- Menu -->
-<th:block th:insert="~{layouts/menu}"></th:block>
+<nav class="navbar">
+    <div class="navbar-brand">
+        <a th:href="@{/}">CineApp</a>
+    </div>
+    <ul class="navbar-menu">
+        <li><a th:href="@{/users}">Usuarios</a></li>
+        <li><a th:href="@{/entradas-cine}">Entradas de Cine</a></li>
+    </ul>
+</nav>
 
 <main class="container">
     <div class="page-header">
@@ -17,51 +28,43 @@
 
         <div class="detail-row">
             <span class="detail-label">Nombre</span>
-            <!-- th:text muestra el valor del campo -->
             <span class="detail-value" th:text="${user.name}"></span>
         </div>
-
         <div class="detail-row">
             <span class="detail-label">Email</span>
             <span class="detail-value" th:text="${user.email}"></span>
         </div>
-
         <div class="detail-row">
             <span class="detail-label">Rol</span>
             <span class="detail-value" th:text="${user.role}"></span>
         </div>
-
         <div class="detail-row">
             <span class="detail-label">Estado</span>
             <span class="detail-value" th:text="${user.status}"></span>
         </div>
-
         <div class="detail-row">
             <span class="detail-label">Creado</span>
             <span class="detail-value" th:text="${user.createdAt}"></span>
         </div>
-
         <div class="detail-row">
             <span class="detail-label">Actualizado</span>
             <span class="detail-value" th:text="${user.updatedAt}"></span>
         </div>
 
         <div class="form-actions">
-            <!-- Boton editar -->
             <a th:href="@{/users/{id}/edit(id=${user.id})}" class="btn btn-warning">Editar</a>
-            <!-- Formulario eliminar -->
             <form th:action="@{/users/{id}/delete(id=${user.id})}" method="post">
                 <button type="submit" class="btn btn-danger"
-                        onclick="return confirm('¿Estás seguro de eliminar este usuario?')">
-                    Eliminar
-                </button>
+                        onclick="return confirm('¿Estás seguro?')">Eliminar</button>
             </form>
         </div>
 
     </div>
 </main>
 
-<!-- Pie de pagina -->
-<th:block th:insert="~{layouts/footer}"></th:block>
-
+<footer class="footer">
+    <p>&copy; 2025 - Universidad de Cartagena - Desarrollo Software Web</p>
+</footer>
+<script th:src="@{/js/main.js}"></script>
+</body>
 </html>

@@ -9,6 +9,16 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 
+
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -20,16 +30,16 @@ public class EntradaCine {
     @Column(name = "id", nullable = false, length = 36)
     private String id;
 
-    @Column(name = "fechaCompra", nullable = false)
+    @Column(name = "fecha_compra", nullable = false)
     private LocalDate fechaCompra;
 
-    @Column(name = "fechaEntrada", nullable = false)
+    @Column(name = "fecha_entrada", nullable = false)
     private LocalDate fechaEntrada;
 
-    @Column(name = "horaInicio", nullable = false)
+    @Column(name = "hora_inicio", nullable = false)
     private LocalTime horaInicio;
 
-    @Column(name = "horaFin", nullable = false)
+    @Column(name = "hora_fin", nullable = false)
     private LocalTime horaFin;
 
     @Column(name = "valor", nullable = false, precision = 10, scale = 2)
@@ -59,12 +69,12 @@ public class EntradaCine {
     @Column(name = "ciudad", nullable = false, length = 100)
     private String ciudad;
 
-    @Column(name = "centroComercial", nullable = false, length = 150)
+    @Column(name = "centro_comercial", nullable = false, length = 150)
     private String centroComercial;
 
-    @Column(name = "createdAt")
+    @Column(name = "created_at")
     private LocalDateTime createdAt;
 
-    @Column(name = "updatedAt")
+    @Column(name = "updated_at")
     private LocalDateTime updatedAt;
 }

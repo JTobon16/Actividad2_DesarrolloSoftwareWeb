@@ -484,3 +484,23 @@ a {
     color: var(--gray);
     font-size: 0.95rem;
 }
+/* ==========================================
+   HOME HEADER
+   ========================================== */
+.home-header {
+    background: linear-gradient(135deg, var(--secondary) 0%, var(--accent) 100%);
+    text-align: center;
+    padding: 3rem 0;
+}
+
+.home-logo {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+.home-logo span {
+    color: var(--primary);
+}

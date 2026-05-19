@@ -1,11 +1,22 @@
 <!DOCTYPE html>
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Entrada - CineApp</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
 
-<!-- Cabecera -->
-<th:block th:insert="~{layouts/header}"></th:block>
-
-<!-- Menu -->
-<th:block th:insert="~{layouts/menu}"></th:block>
+<nav class="navbar">
+    <div class="navbar-brand">
+        <a th:href="@{/}"><span>C</span>INE<span>A</span>PP</a>
+    </div>
+    <ul class="navbar-menu">
+        <li><a th:href="@{/users}">Usuarios</a></li>
+        <li><a th:href="@{/entradas-cine}">Entradas de Cine</a></li>
+    </ul>
+</nav>
 
 <main class="container">
     <div class="page-header">
@@ -13,7 +24,6 @@
         <a th:href="@{/entradas-cine}" class="btn btn-secondary">Volver</a>
     </div>
 
-    <!-- th:object liga el formulario al objeto entrada del controlador -->
     <form th:action="@{/entradas-cine/create}" th:object="${entrada}"
           method="post" class="form">
 
@@ -118,7 +128,9 @@
     </form>
 </main>
 
-<!-- Pie de pagina -->
-<th:block th:insert="~{layouts/footer}"></th:block>
-
+<footer class="footer">
+    <p>&copy; 2026 - Universidad de Cartagena - Desarrollo Software Web</p>
+</footer>
+<script th:src="@{/js/main.js}"></script>
+</body>
 </html>

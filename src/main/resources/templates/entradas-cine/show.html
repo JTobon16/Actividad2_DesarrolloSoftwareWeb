@@ -16,6 +16,13 @@
         <li><a th:href="@{/users}">Usuarios</a></li>
         <li><a th:href="@{/entradas-cine}">Entradas de Cine</a></li>
     </ul>
+    <!-- Muestra el usuario activo y boton de cerrar sesion -->
+    <div class="navbar-user">
+        <span class="user-name">👤 [[${session.userSession}]]</span>
+        <form th:action="@{/auth/logout}" method="post">
+            <button type="submit" class="btn-logout">Cerrar Sesión</button>
+        </form>
+    </div>
 </nav>
 
 <main class="container">

@@ -504,3 +504,56 @@ a {
 .home-logo span {
     color: var(--primary);
 }
+/* ==========================================
+   NAVBAR USUARIO ACTIVO
+   ========================================== */
+.navbar-user {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.user-name {
+    color: rgba(255,255,255,0.85);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.btn-logout {
+    background-color: var(--primary);
+    color: var(--white);
+    border: none;
+    padding: 0.45rem 1.1rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-logout:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-1px);
+}
+
+/* ==========================================
+   LOGIN FOOTER
+   ========================================== */
+.login-footer {
+    text-align: center;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    color: var(--gray);
+    font-size: 0.9rem;
+}
+
+.login-link {
+    color: var(--primary);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.login-link:hover {
+    text-decoration: underline;
+}

@@ -10,7 +10,7 @@
 
 <nav class="navbar">
     <div class="navbar-brand">
-        <a th:href="@{/}">CineApp</a>
+        <a th:href="@{/}"><span>C</span>INE<span>A</span>PP</a>
     </div>
     <ul class="navbar-menu">
         <li><a th:href="@{/users}">Usuarios</a></li>
@@ -19,19 +19,22 @@
 </nav>
 
 <main class="container">
-    <div class="page-header">
-        <h1>Bienvenido a CineApp</h1>
+    <div class="home-hero">
+        <h1><span>Cine</span>App</h1>
+        <p>Sistema de gestión de entradas de cine</p>
     </div>
 
     <div class="home-cards">
         <div class="card">
+            <div class="card-icon">👥</div>
             <h2>Usuarios</h2>
-            <p>Gestiona los usuarios del sistema</p>
+            <p>Gestiona los usuarios del sistema, roles y permisos de acceso</p>
             <a th:href="@{/users}" class="btn btn-primary">Ver Usuarios</a>
         </div>
         <div class="card">
+            <div class="card-icon">🎬</div>
             <h2>Entradas de Cine</h2>
-            <p>Gestiona las entradas de cine</p>
+            <p>Gestiona las entradas de cine, películas, salas y horarios</p>
             <a th:href="@{/entradas-cine}" class="btn btn-primary">Ver Entradas</a>
         </div>
     </div>
@@ -42,6 +45,5 @@
 </footer>
 
 <script th:src="@{/js/main.js}"></script>
-
 </body>
 </html>
